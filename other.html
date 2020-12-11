@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他方法实现中间栏div内容不被遮挡</title>
+</head>
+
+<style>
+    .container{
+        padding: 0 100px 0 200px;
+    }
+    .left,.main,.right{
+        float:left;
+        position: relative;
+        min-height: 200px;
+    }
+    .left{
+        background: lightgreen;
+        width: 200px;
+        /* 关键点：会让元素沿文档流向左移动，负数值比较大的话会一直移动到上一行 */
+        margin-left: -100%;
+        left: -200px;
+    }
+    .main{
+        background: lightpink;
+        width: 100%;
+        /* 关键点！！！ */
+        box-sizing: border-box;
+        padding: 0 100px 0 200px;
+    }
+    .right{
+        background: lightseagreen;
+        width: 100px;
+        margin-left: -100px;
+        right: -100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+</head>
+<style>
+    .container {
+        padding: 0 100px 0 200px;/* 此段代码是为了摆正中间栏的位置 */
+        /* min-width: 600px; 不设置最小宽度  页面容易变形 */
+    }
+
+    .left {
+        width: 200px;
+        background: red;
+        /* 关键点：会让元素沿文档流向左移动，负数值比较大的话会一直移动到上一行 */
+        margin-left: -100%;
+        left: -200px;
+        /* 中间栏的位置摆正之后，左栏的位置也相应右移，通过相对定位的left恢复到正确位置 */
+    }
+    .right{
+        width: 100px;
+        background: blue;
+        margin-left: -100px;
+        right: -100px;
+        /* 中间栏的位置摆正之后，右栏的位置也相应左移，通过相对定位的right恢复到正确位置 */
+    }
+    .main{
+        width: 100%;
+        background: yellow;
+    }
+    .left,.main,.right{
+        float: left;
+        min-height: 200px;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="main">main</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+
+</html>

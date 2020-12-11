@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双飞翼</title>
+</head>
+<style>
+    .left,.main,.right{
+        min-height: 300px;
+        float: left;
+    }
+    .content{
+        /* 关键点：用margin把div挤到中间正常展示*/
+        margin: 0 100px 0 200px;
+    }
+    .left{
+        width: 200px;
+        background: green;
+        margin-left: -100%;
+    }
+    .main{
+        width: 100%;
+        background: red;
+    }
+    .right{
+        width: 100px;
+        background: blue;
+        margin-left: -100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="content">main</div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+
+</html>

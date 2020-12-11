@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+</head>
+
+<style>
+    .container{
+        display: flex;
+        min-height: 300px;
+    }
+    .main {
+        flex-grow: 1;
+        background-color: mediumaquamarine;
+    }
+    .left{
+        flex-basis: 200px;
+        /* 固定宽度 */
+        background-color: mediumpurple;
+    }
+    .right{
+        flex-basis: 300px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="main">main</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>
