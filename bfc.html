@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bfc</title>
 </head>
+<style>
+    .outer {
+        border: 3px dotted red;
+        border-radius: 5px;
+        width: 400px;
+        padding: 10px;
+        margin-bottom: 40px;
+        /* overflow:auto */
+
+    }
+
+    .float {
+        padding: 10px;
+        border: 3px solid teal;
+        border-radius: 3px;
+        background-color:skyblue;
+        color: #fff;
+        float: left;
+        width: 200px;
+        margin: 0 20px 0 0;
+    }
+    /* .outer:after{
+        content:"";
+        display:block;
+        clear:both;
+    } */
+
+    .outer::after{
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    /* .clear{
+        clear: both;
+    } */
+</style>
+
 <body>
-    
+    <div class="outer">
+        <div class="float">I am a floated element.</div>
+        I am text inside the
+        <!-- <div class="clear"></div> -->
+         <!-- outer box.If there is enough text 
+        then the text will wrap around the floated element.
+        The border on the outer will then wrap around the text. -->
+    </div>
 </body>
+
 </html>
